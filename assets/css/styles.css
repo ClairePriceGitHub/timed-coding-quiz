@@ -60,6 +60,10 @@ li:nth-child(odd) {
 
 .hide {
   display: none;
+} 
+
+.unhide {
+  display: block;
 }
 
 .start {
