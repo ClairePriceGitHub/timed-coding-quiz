@@ -21,24 +21,24 @@ var startButton = document.querySelector('#start');
 
 var startMode = 'unhide';
 
-startButton.onclick = function() {
+startButton.addEventListener(click, function(){
     startMode = 'hide';
     startScreen.setAttribute('click', 'hide');
-};
-
-
-var questions = document.querySelector('#questions');
-var choices = document.querySelector('#choices');
-
-var mode = 'hide';
-
-choices.addEventListener('click', function(){
-    if (mode === 'hide') {
-        mode = 'unhide';
-        questions.setAttribute('class', 'unhide');
-    } else {
-        mode = 'hide';
-        questions.setAttribute('class', 'hide');
-    }
 });
+
+
+// var questions = document.querySelector('#questions');
+// var choices = document.querySelector('#choices');
+
+// var mode = 'hide';
+
+// choices.addEventListener('click', function(){
+//     if (mode === 'hide') {
+//         mode = 'unhide';
+//         questions.setAttribute('class', 'unhide');
+//     } else {
+//         mode = 'hide';
+//         questions.setAttribute('class', 'hide');
+//     }
+// });
 
