@@ -1,13 +1,13 @@
 
-var count = 60;
-var timer = setInterval(function() {
-  count--;
-  console.log(count);
-  if (count === 0) {
-    clearInterval(timer);
-    console.log("Time's up!");
-  }
-}, 1000);
+// var count = 60;
+// var timer = setInterval(function() {
+//   count--;
+//   console.log(count);
+//   if (count === 0) {
+//     clearInterval(timer);
+//     console.log("Time's up!");
+//   }
+// }, 1000);
 
 
 
@@ -18,19 +18,36 @@ var startScreen = document.getElementById('start-screen');
 var startButton = document.getElementById('start');
 var startMode = document.querySelector('.start');
 var mode = document.querySelector('.hide');
-
 startButton.addEventListener('click', function(){
     startMode.style.display = 'none';
-    mode.style.display = 'block';
+    runQuestion();
 });
 
+// Run question 
+function runQuestion() {
+    for (var i=0; i < questions.length; i++) {
+        mode.style.display = 'block';
+        document.getElementById('question-title').innerHTML = question1.question;
 
-var questions = document.getElementById('questions');
-var answerButton = document.getElementById('choices');
+        for (var j=0; j < question1.answerOptions.length; j++){
+            var optionsButton = document.createElement('button');
+            optionsButton.innerHTML = question1.answerOptions[j];
+            document.getElementById('choices').appendChild(optionsButton);
+        }
+    }
+}
 
-answerButton.addEventListener('click', function(){
-    questions.style.display = 'none';
-})
+
+
+
+
+// // Hide question on click of answer option button
+// var questions = document.getElementById('questions');
+// var answerButton = document.getElementById('choices');
+
+// answerButton.addEventListener('click', function(){
+//     questions.style.display = 'none';
+// })
 
 
 
