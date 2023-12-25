@@ -19,57 +19,57 @@ var startButton = document.getElementById('start');
 var startMode = document.querySelector('.start');
 var mode = document.querySelector('.hide');
 
-var optionsButton = document.createElement('button');
-    optionsButton.id = 'x';
+// var optionsButton = document.createElement('button');
+//     optionsButton.id = 'x';
 
-function createButton() {
-    optionsButton.id = 'a';
-    optionsButton.innerHTML = quizQuestion.answerOptions[0];
-    document.getElementById('choices').appendChild(optionsButton);
-}
+// function createButton() {
+//     optionsButton.id = 'a';
+//     optionsButton.innerHTML = quizQuestion.answerOptions[0];
+//     document.getElementById('choices').appendChild(optionsButton);
+// }
 
-function runQuestion(quizQuestion) {
-    mode.style.display = 'block';
-    document.getElementById('question-title').innerHTML = quizQuestion.question;
-    createButton();
-}
+// function runQuestion(quizQuestion) {
+//     mode.style.display = 'block';
+//     document.getElementById('question-title').innerHTML = quizQuestion.question;
+//     createButton();
+// }
 
-function hideQuestion() {
+// function hideQuestion() {
    
-}
+// }
 
 
 // Start quiz
 startButton.addEventListener('click', function(){
    
     startMode.style.display = 'none';
-    quizQuestion = question1;
-    runQuestion(quizQuestion);
-    // quizQuestion = question2;
-    // runQuestion(quizQuestion);
+    runQuestion();
 });
 
-x.addEventListener('click', function(){
-    mode.style.display = 'hide';
-    quizQuestion = question2;
-    runQuestion(quizQuestion);
-})
+// x.addEventListener('click', function(){
+//     mode.style.display = 'hide';
+//     quizQuestion = question2;
+//     runQuestion(quizQuestion);
+// })
 
 // Run question 
-// function runQuestion() {
-//         mode.style.display = 'block';
-//         document.getElementById('question-title').innerHTML = question1.question;
-//         for (var j=0; j < question1.answerOptions.length; j++){
-//             var optionsButton = document.createElement('button');
-//             optionsButton.id = 'answerButton';
-//             optionsButton.innerHTML = question1.answerOptions[j];
-//             document.getElementById('choices').appendChild(optionsButton);
-//         }   
-//         var answerButton = document.getElementById('answerButton');
-//         answerButton.addEventListener('click', function(){
-//             mode.style.display = 'none';
-//         });
-// }
+function runQuestion() {
+    // Question plus answers displayed
+        mode.style.display = 'block';
+        document.getElementById('question-title').innerHTML = question1.question;
+        // Answer options
+        for (var j=0; j < question1.answerOptions.length; j++){
+            var optionsButton = document.createElement('button');
+            optionsButton.id = 'answerButton';
+            optionsButton.innerHTML = question1.answerOptions[j];
+            document.getElementById('choices').appendChild(optionsButton);
+        }   
+        // if first clicked goes blank
+        var answerButton = document.getElementById('answerButton');
+        answerButton.addEventListener('click', function(){
+            mode.style.display = 'none';
+        });
+}
 
 
 
