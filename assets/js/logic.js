@@ -53,7 +53,9 @@ startButton.addEventListener('click', function(){
 // })
 
 // Run question 
-function runQuestion() {
+function runQuestion(
+  
+) {
     // Question plus answers displayed
         mode.style.display = 'block';
         document.getElementById('question-title').innerHTML = question1.question;
