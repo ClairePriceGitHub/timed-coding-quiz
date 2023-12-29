@@ -122,7 +122,9 @@ function showQuestion(questionNumber) {
       optionsButton4.innerHTML = questionNumber.answerOptions[3];
       choicesMode.addEventListener('click', function(){
         questionMode.style.display = 'none';
+        showQuestion(question2);
         });
+      
       // optionsButton2.addEventListener('click', function(){
       //   questionMode.style.display = 'none';
       // });
@@ -133,6 +135,7 @@ function showQuestion(questionNumber) {
       //   questionMode.style.display = 'none';
       // });
 }
+
 
 
 
@@ -148,7 +151,6 @@ function game() {
   startButton.addEventListener('click', function(){
     startMode.style.display = 'none';
     showQuestion(question1);
-    showQuestion(question2);
   });
   
 }
