@@ -1,4 +1,4 @@
-var questions = [ 
+var questions = [
     {
     question: 'what is your favourite colour',
     answerOptions: ['red', 'orange', 'green', 'blue'],
@@ -10,7 +10,7 @@ var questions = [
     correctAnswer: 'cat'
     },
     {
-    question: 'what is your favourite animal',
+    question: 'v',
     answerOptions: ['cat', 'dog', 'fish', 'bird'],
     correctAnswer: 'cat'
     },
@@ -25,3 +25,36 @@ var questions = [
     correctAnswer: 'cat'
     }
 ]
+    
+
+
+
+// var question1 = {
+//     question: 'what is your favourite colour',
+//     answerOptions: ['red', 'orange', 'green', 'blue'],
+//     correctAnswer: 'green'
+//     }
+
+// var question2 = {
+//     question: 'what is your favourite animal',
+//     answerOptions: ['cat', 'dog', 'fish', 'bird'],
+//     correctAnswer: 'cat'
+//     }
+
+// var question3 = {
+//     question: 'v',
+//     answerOptions: ['cat', 'dog', 'fish', 'bird'],
+//     correctAnswer: 'cat'
+//     }
+
+// var question4 = {
+//     question: 'what is your favourite animal',
+//     answerOptions: ['cat', 'dog', 'fish', 'bird'],
+//     correctAnswer: 'cat'
+//     }
+
+// var question5 = {
+//     question: 'what is your favourite animal',
+//     answerOptions: ['cat', 'dog', 'fish', 'bird'],
+//     correctAnswer: 'cat'
+//     }
