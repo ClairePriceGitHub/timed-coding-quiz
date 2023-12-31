@@ -7,9 +7,8 @@ var finalScore = document.getElementById('final-score');
 var submitButton = document.getElementById('submit');
 //var highScores = document.getElementById('highscores');
 var timer = document.querySelector('.timer');
-// Set timer to start at 60
 var time = document.getElementById('time');
-time.innerHTML = 60;
+time.innerHTML = 60; // Set timer to start at 60
 
 
 // Create buttons
@@ -38,11 +37,9 @@ result.innerHTML = '';
 
 var count = 60;
 var currentQuestion = 0;
-// var chosenAnswer = 0;
 var score = 0;
 var scoreCorrect = 10;
 var scoreIncorrect = -10;
-
 
 
 function startQuiz() {
@@ -103,18 +100,12 @@ function checkAnswer(index, currentQuestion) {
     score = score + scoreIncorrect;
     console.log(score);
   }
-  nextQuestion(currentQuestion);
+  // Wait 2 seconds before moving to next question so the result can be read
+  setTimeout(() => {
+    nextQuestion(currentQuestion);
+  }, 2000);
 }
 
-
-// function nextQuestion(currentQuestion) {
-//   if (currentQuestion === questions.length) {
-//     endScreen();
-//   } else {
-//     currentQuestion += 1;
-//   }
-//   showQuestion(currentQuestion);
-// }
 
 function nextQuestion(currentQuestion) {
   if (currentQuestion < questions.length - 1) {
