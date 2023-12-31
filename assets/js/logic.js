@@ -2,10 +2,11 @@ var startButton = document.getElementById('start');
 var startMode = document.querySelector('.start');
 var questionMode = document.querySelector('.hide');
 var questionTitle = document.getElementById('question-title');
-var endScreen = document.getElementById('end-screen');
+var endScreenMode = document.getElementById('end-screen');
 var finalScore = document.getElementById('final-score');
 var submitButton = document.getElementById('submit');
 //var highScores = document.getElementById('highscores');
+var timer = document.querySelector('.timer');
 // Set timer to start at 60
 var time = document.getElementById('time');
 time.innerHTML = 60;
@@ -37,10 +38,11 @@ result.innerHTML = '';
 
 var count = 60;
 var currentQuestion = 0;
-var questionNumber = 0;
-//var correctAnswers = 0;
-var chosenAnswer = 0;
+// var chosenAnswer = 0;
 var score = 0;
+var scoreCorrect = 10;
+var scoreIncorrect = -10;
+
 
 
 function startQuiz() {
@@ -49,7 +51,6 @@ function startQuiz() {
     startMode.style.display = 'none';
     questionMode.style.display = 'block';
     // Start timer
-    
     var timer = setInterval(function() {
       count--;
       if (count === 0) {
@@ -65,8 +66,8 @@ function startQuiz() {
 }
 
 
-
 function showQuestion(currentQuestion) {
+  result.style.display = 'none';
   questionTitle.innerHTML = questions[currentQuestion].question;
   // Append buttons
   optionsButton1.innerHTML = questions[currentQuestion].answerOptions[0];
@@ -74,56 +75,64 @@ function showQuestion(currentQuestion) {
   optionsButton3.innerHTML = questions[currentQuestion].answerOptions[2];
   optionsButton4.innerHTML = questions[currentQuestion].answerOptions[3];
   optionsButton1.addEventListener('click', function(){
-    checkAnswer(0);
+    checkAnswer(0, currentQuestion);
+    result.style.display = 'block';
   });
   optionsButton2.addEventListener('click', function(){
-    checkAnswer(1);
+    checkAnswer(1, currentQuestion);
+    result.style.display = 'block';
   });
   optionsButton3.addEventListener('click', function(){
-    checkAnswer(2);
+    checkAnswer(2, currentQuestion);
+    result.style.display = 'block';
   });
   optionsButton4.addEventListener('click', function(){
-    checkAnswer(3);
+    checkAnswer(3, currentQuestion);
+    result.style.display = 'block';
   });
-  
 }
 
 
-function checkAnswer(index) {
+function checkAnswer(index, currentQuestion) {
   if (index === questions[currentQuestion].correctAnswer) {
     result.innerHTML = 'Correct!';
-    score += (100 - count);
+    score = score + scoreCorrect;
+    console.log(score);
   } else {
     result.innerHTML = 'Incorrect!';
-    score -= 10;
+    score = score + scoreIncorrect;
+    console.log(score);
   }
-  nextQuestion();
+  nextQuestion(currentQuestion);
 }
 
-function nextQuestion() {
-  if (currentQuestion < questions.length -1) {
+
+// function nextQuestion(currentQuestion) {
+//   if (currentQuestion === questions.length) {
+//     endScreen();
+//   } else {
+//     currentQuestion += 1;
+//   }
+//   showQuestion(currentQuestion);
+// }
+
+function nextQuestion(currentQuestion) {
+  if (currentQuestion < questions.length - 1) {
     currentQuestion += 1;
-    showQuestion(currentQuestion);
   } else {
-    endscreen();
+    endScreen();
   }
+  showQuestion(currentQuestion);
 }
 
 
-
-function endscreen() {
+function endScreen() {
   questionMode.style.display = 'none';
-  endScreen.style.display = 'block';
+  timer.style.display = 'none';
+  endScreenMode.style.display = 'block';
   finalScore.innerHTML = score;
   submitButton.addEventListener('click', function(){
-    //var initials = document.getElementById('initials').value;
-    var initials = document.getElementById('initials').value;
-
-    var highScoresLi = document.createElement('li');
-    highScoresLi.id = 'highScoresLi';
-    highScoresLi.innerHTML = '';
-    document.getElementById('highscores').appendChild('highScoresLi');
-    
+    logHighScore();
   });
 }
 
