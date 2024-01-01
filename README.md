@@ -1,11 +1,11 @@
 # Timed Coding Quiz
 
 ## Description
-Project to create a timed coding quiz on the subject of JavaScript, to become familiar with typical coding assessments which can be part of a Front-End Web Developer interview process. These questions can be practised to prepare for such interview. The project also allowed me to practise undertaking an interactive coding challenge.
+Project to create a timed coding quiz on the subject of JavaScript, to become familiar with typical coding assessments as part of a Front-End Web Developer interview process. The questions in the quiz can be practised to prepare for such interview. The project also allowed me to practise undertaking an interactive coding challenge.
 
 In this project HTML and CSS code is dynamically updated and powered by JavaScript. HTML and CSS starter code was provided and I created three JavaScript files, organising functionality of the quiz. 
 
-During this project I improved my knowledge of using web API’s and functions, although I also became aware of areas where more study is needed so I can understand various techniques and perfect my code.
+During this project I improved my knowledge of using web API’s and functions. I also became aware of areas where more study is needed so I can fully understand various techniques and perfect code.
 
 ## Installation
 
