@@ -21,8 +21,13 @@ https://clairepricegithub.github.io/timed-coding-quiz/
 
 ## Credits
 
-script.js line 103: <br>
-CodeBeautify Blog. (2022, Dec 24). *Check if Variable Is a Number in Javascript*. https://codebeautify.org/blog/check-if-variable-is-a-number-in-javascript/
+BYBY. (2023, Aug 3). *How to wait n seconds in JavaScript*. https://byby.dev/js-wait-n-seconds.
+
+Interview Bit. (2023, Nov 21). *JavaScript MCQ With Answers*. https://www.interviewbit.com/javascript-mcq/#which-of-the-following-is-not-a-javascript-framework.
+
+Ofoegbu, J. (2023, Oct 13). *Let’s Build a Multiple Choice Quiz App With JavaScript*. Envato Tuts+. https://webdesign.tutsplus.com/multiple-choice-quiz-app-with-javascript--cms-107756t. 
+
+Olawanle, J. (2023, Apr 14). *JavaScript Refresh Page – How to Reload a Page in JS*. Free Code Camp. https://www.freecodecamp.org/news/javascript-refresh-page-how-to-reload-a-page-in-js/.
 
 ## License
 
